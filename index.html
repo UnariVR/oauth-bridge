@@ -3,9 +3,14 @@
 <head><meta charset="utf-8"><title>Signing in…</title></head>
 <body>
 <script>
+  var params = new URLSearchParams(location.search);
+  var clean = new URLSearchParams();
+  clean.set('oauthcallback', '1');
+  if (params.has('code')) clean.set('code', params.get('code'));
+  if (params.has('state')) clean.set('state', params.get('state'));
+  if (params.has('error')) clean.set('error', params.get('error'));
   location.replace(
-    'https://script.google.com/macros/s/AKfycbwb3XjXX8toQ-W-fAhqhXFmM_i3oMLVY4prYf3tDq_92UnyvlOEzDu76u76WWJlpoHPSg/exec?oauthcallback=1&' +
-    location.search.slice(1)
+    'https://script.google.com/macros/s/AKfycbwb3XjXX8toQ-W-fAhqhXFmM_i3oMLVY4prYf3tDq_92UnyvlOEzDu76u76WWJlpoHPSg/exec?' + clean.toString()
   );
 </script>
 Signing in…
