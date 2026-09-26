@@ -1,12 +1,4 @@
 <!doctype html>
-<!--
-  OAuth bridge for the Hold project. Publish this as hold/index.html in the
-  unarivr/oauth-bridge GitHub Pages repo, so it's served at
-  https://unarivr.github.io/oauth-bridge/hold/ (DEFAULT_OAUTH_REDIRECT_URL,
-  Code.js). Same logic as the inn bridge: forward ONLY code/state/error to
-  the Hold web app's /exec (deployment @1, "v1 — initial Riften Hold
-  menu"). Redeploy with `clasp deploy -i <that id>` to keep this URL.
--->
 <html>
 <head><meta charset="utf-8"><title>Signing in…</title></head>
 <body>
